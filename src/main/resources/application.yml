@@ -1,0 +1,41 @@
+spring:
+  datasource:
+    master:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: oracle.jdbc.driver.OracleDriver
+        url: jdbc:oracle:thin:@10.10.22.75:1521/hip31
+        username: bship_base
+        password: bsoft
+        initialSize: 10
+        minIdle: 5
+        maxActive: 100
+        maxWait: 10000
+        validationQuery: SELECT 1 FROM DUAL
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        removeAbandoned: true
+        removeAbandonedTimeout: 180
+        keepAlive: true
+        minEvictableIdleTimeMillis: 300000
+    slave:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: oracle.jdbc.driver.OracleDriver
+        url: jdbc:oracle:thin:@10.10.22.75:1521/hip31
+        username: bship_log
+        password: bsoft
+        initialSize: 10
+        minIdle: 5
+        maxActive: 100
+        maxWait: 10000
+        validationQuery: SELECT 1 FROM DUAL
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        removeAbandoned: true
+        removeAbandonedTimeout: 180
+        keepAlive: true
+        minEvictableIdleTimeMillis: 300000
+
